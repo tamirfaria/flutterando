@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app_controller.dart';
+import 'package:flutterando/widgets/custom_switch_wiget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, required this.title}) : super(key: key);
@@ -18,18 +18,9 @@ class HomePageState extends State<HomePage> {
         title: Text(
           widget.title,
         ),
-        centerTitle: true,
-      ),
-      body: Align(
-        alignment: Alignment.topRight,
-        child: Switch(
-          value: AppController.instance.isDarkTheme,
-          onChanged: (value) {
-            setState(() {
-              AppController.instance.changeTheme();
-            });
-          },
-        ),
+        actions: const [
+          CustomSwitch(),
+        ],
       ),
     );
   }

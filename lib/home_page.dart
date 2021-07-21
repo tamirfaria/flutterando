@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  var counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +22,24 @@ class HomePageState extends State<HomePage> {
         actions: const [
           CustomSwitch(),
         ],
+      ),
+      drawer: const Drawer(),
+      body: SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text('Contador: $counter'),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() => counter++);
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

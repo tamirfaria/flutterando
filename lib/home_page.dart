@@ -29,9 +29,19 @@ class HomePageState extends State<HomePage> {
         width: double.infinity,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text('Contador: $counter'),
+            const SizedBox(
+              height: 46.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Icon(Icons.favorite_border_outlined, color: Colors.red),
+                Icon(Icons.favorite_border_outlined, color: Colors.green),
+                Icon(Icons.favorite_border_outlined, color: Colors.amber),
+              ],
+            ),
           ],
         ),
       ),

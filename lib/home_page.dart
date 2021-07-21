@@ -11,6 +11,20 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  final List<MaterialColor> colors = <MaterialColor>[
+    Colors.red,
+    Colors.orange,
+    Colors.amber,
+    Colors.green,
+    Colors.blue,
+    Colors.cyan,
+    Colors.purple,
+    Colors.deepPurple,
+    Colors.pink,
+    Colors.brown,
+    Colors.blueGrey,
+    Colors.grey,
+  ];
   var counter = 0;
   @override
   Widget build(BuildContext context) {
@@ -24,26 +38,23 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       drawer: const Drawer(),
-      body: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Contador: $counter'),
-            const SizedBox(
-              height: 46.0,
+      body: ListView.separated(
+        padding: const EdgeInsets.all(8.0),
+        itemCount: colors.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Container(
+            height: 72.0,
+            color: colors[index],
+            child: const Center(
+              child: Icon(
+                Icons.favorite_border_outlined,
+                color: Colors.white,
+                size: 60.0,
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Icon(Icons.favorite_border_outlined, color: Colors.red),
-                Icon(Icons.favorite_border_outlined, color: Colors.green),
-                Icon(Icons.favorite_border_outlined, color: Colors.amber),
-              ],
-            ),
-          ],
-        ),
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

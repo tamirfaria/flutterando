@@ -25,6 +25,14 @@ class HomePageState extends State<HomePage> {
     Colors.blueGrey,
     Colors.grey,
   ];
+  final List<int> colorsCode = <int>[
+    300,
+    400,
+    600,
+    700,
+    800,
+    900,
+  ];
   var counter = 0;
   @override
   Widget build(BuildContext context) {
@@ -43,7 +51,7 @@ class HomePageState extends State<HomePage> {
         itemCount: colors.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            height: 72.0,
+            height: MediaQuery.of(context).size.height * 0.1,
             color: colors[index],
             child: const Center(
               child: Icon(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterando/app_controller.dart';
-import 'package:flutterando/home_page.dart';
+import 'package:flutterando/login_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: const HomePage(title: 'Fluterando | Aula 17'),
+          home: const LoginPage(),
         );
       },
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/login_page.dart';
 import 'package:flutterando/widgets/custom_switch_wiget.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +11,13 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  var counter = 0;
+  bool colored = false;
+  void changeColor() {
+    setState(() {
+      colored = !colored;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +30,25 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       drawer: const Drawer(),
-      body: const LoginPage(),
+      body: Center(
+        child: InkWell(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(36.0),
+          ),
+          onTap: () => changeColor(),
+          child: (colored == true)
+              ? const Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 81.0,
+                )
+              : const Icon(
+                  Icons.favorite_border_outlined,
+                  color: Colors.red,
+                  size: 81.0,
+                ),
+        ),
+      ),
     );
   }
 }

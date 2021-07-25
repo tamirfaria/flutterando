@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterando/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,6 +12,12 @@ class _LoginPageState extends State<LoginPage> {
   String email = '';
   String password = '';
   bool isVisible = false;
+  void changeVisibility() {
+    setState(() {
+      isVisible = !isVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +43,17 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 16.0),
                 TextField(
-                  obscureText: true,
+                  obscureText: (!isVisible) ? true : false,
                   keyboardType: TextInputType.visiblePassword,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Password',
-                    border: OutlineInputBorder(),
-                    suffixIcon: (Icon(Icons.visibility_off_rounded)),
+                    border: const OutlineInputBorder(),
+                    suffixIcon: InkWell(
+                      onTap: () => changeVisibility(),
+                      child: (isVisible)
+                          ? const Icon(Icons.visibility_outlined)
+                          : const Icon(Icons.visibility_off_outlined),
+                    ),
                   ),
                   onChanged: (value) {
                     password = value;
@@ -53,7 +65,12 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (email == 'lucastamir@gmail.com' &&
                         password == '123456') {
-                      print('Logado');
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              const HomePage(title: 'Bem vindo'),
+                        ),
+                      );
                     } else {
                       print('Tente novamente');
                     }

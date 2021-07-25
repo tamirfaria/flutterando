@@ -17,7 +17,7 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: const HomePage(title: 'Fluterando | Aula 12'),
+          home: const HomePage(title: 'Fluterando | Aula 17'),
         );
       },
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app_controller.dart';
-import 'package:flutterando/login_page.dart';
+import 'package:flutterando/pages/login/login_page.dart';
+import 'package:flutterando/widgets/app-widget/controller/app_controller.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);

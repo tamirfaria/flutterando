@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/pages/home/home_page.dart';
 
 class CustomElevatedButton extends StatefulWidget {
   const CustomElevatedButton({Key? key, required this.controller})
@@ -19,11 +18,7 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
       onPressed: () {
         (widget.controller.email == 'lucastamir@gmail.com' &&
                 widget.controller.password == '123456')
-            ? Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) => const HomePage(title: 'Bem vindo'),
-                ),
-              )
+            ? Navigator.of(context).pushReplacementNamed('home')
             : print('Tente novamente');
       },
     );

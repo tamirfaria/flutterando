@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeController extends ChangeNotifier {
-  static HomeController instance = HomeController();
+class RedHeartController extends ChangeNotifier {
+  static RedHeartController instance = RedHeartController();
 
   bool colored = false;
   Icon coloredIcon = const Icon(Icons.favorite, color: Colors.red, size: 81.0);

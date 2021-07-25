@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutterando/pages/green-heart/green_heart_page.dart';
+import 'package:flutterando/pages/home/home_page.dart';
 import 'package:flutterando/pages/login/login_page.dart';
+import 'package:flutterando/pages/red-heart/red_heart_page.dart';
+import 'package:flutterando/pages/yellow-heart/yellow_heart_page.dart';
 import 'package:flutterando/widgets/app-widget/controller/app_controller.dart';
 
 class AppWidget extends StatelessWidget {
@@ -17,7 +21,14 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: const LoginPage(),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => const LoginPage(),
+            'home': (context) => const HomePage(),
+            'red': (context) => const RedHeartPage(),
+            'yellow': (context) => const YellowHeartPage(),
+            'green': (context) => const GreenHeartPage(),
+          },
         );
       },
     );

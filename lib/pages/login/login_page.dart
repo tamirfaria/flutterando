@@ -17,27 +17,44 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 250,
-                  width: 250,
-                  child: Image.asset('assets/images/logo.png'),
-                ),
-                CustomTextFieldEmail(controller: controller),
-                const SizedBox(height: 16.0),
-                CustomTextFieldPassword(controller: controller),
-                const SizedBox(height: 16.0),
-                CustomElevatedButton(controller: controller),
-              ],
+        child: Stack(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: Image.asset(
+                'assets/images/background.jpg',
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
+            Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              color: Colors.white.withOpacity(0.75),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: Image.asset('assets/images/logo.png'),
+                    ),
+                    const SizedBox(height: 16),
+                    CustomTextFieldEmail(controller: controller),
+                    const SizedBox(height: 16.0),
+                    CustomTextFieldPassword(controller: controller),
+                    const SizedBox(height: 16.0),
+                    CustomElevatedButton(controller: controller),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

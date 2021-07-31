@@ -25,6 +25,11 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: 250,
+                  width: 250,
+                  child: Image.asset('assets/images/logo.png'),
+                ),
                 CustomTextFieldEmail(controller: controller),
                 const SizedBox(height: 16.0),
                 CustomTextFieldPassword(controller: controller),

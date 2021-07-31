@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              color: Colors.white.withOpacity(0.75),
+              color: Colors.white.withOpacity(0.5),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -44,12 +44,21 @@ class _LoginPageState extends State<LoginPage> {
                       width: 150,
                       child: Image.asset('assets/images/logo.png'),
                     ),
-                    const SizedBox(height: 16),
-                    CustomTextFieldEmail(controller: controller),
-                    const SizedBox(height: 16.0),
-                    CustomTextFieldPassword(controller: controller),
-                    const SizedBox(height: 16.0),
-                    CustomElevatedButton(controller: controller),
+                    Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          children: [
+                            const SizedBox(height: 16),
+                            CustomTextFieldEmail(controller: controller),
+                            const SizedBox(height: 16.0),
+                            CustomTextFieldPassword(controller: controller),
+                            const SizedBox(height: 16.0),
+                            CustomElevatedButton(controller: controller),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

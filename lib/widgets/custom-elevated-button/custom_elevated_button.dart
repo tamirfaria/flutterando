@@ -14,7 +14,16 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: const Text('Entrar'),
+      style: ElevatedButton.styleFrom(
+        onPrimary: Colors.white,
+      ),
+      child: const SizedBox(
+        width: double.infinity,
+        child: Text(
+          'ENTRAR',
+          textAlign: TextAlign.center,
+        ),
+      ),
       onPressed: () {
         (widget.controller.email == 'lucastamir@gmail.com' &&
                 widget.controller.password == '123456')

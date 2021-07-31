@@ -17,9 +17,12 @@ class AppWidget extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            brightness: AppController.instance.isDarkTheme
-                ? Brightness.dark
-                : Brightness.light,
+            colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.orange,
+              brightness: AppController.instance.isDarkTheme
+                  ? Brightness.dark
+                  : Brightness.light,
+            ),
           ),
           initialRoute: '/',
           routes: {

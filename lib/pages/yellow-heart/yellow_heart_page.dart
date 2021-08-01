@@ -17,6 +17,9 @@ class YellowHeartPageState extends State<YellowHeartPage> {
       appBar: AppBar(
         actions: const [CustomSwitch()],
         backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(
+          color: Colors.orange,
+        ),
         shadowColor: Colors.transparent,
         elevation: 0,
       ),

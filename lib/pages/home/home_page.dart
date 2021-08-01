@@ -34,47 +34,49 @@ class HomePageState extends State<HomePage> {
               accountName: Text('Lucas Tamir Faria'),
               accountEmail: Text('lucastamir@gmail.com'),
             ),
-            ListTile(
-              leading: const Icon(Icons.home, color: Colors.orange),
-              title: const Text('Home'),
-              subtitle: const Text('Lorem ipsum dolor sit amet'),
-              onTap: () => Navigator.of(context).pushNamed('home'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.person, color: Colors.orange),
-              title: const Text('About Us'),
-              subtitle: const Text('Lorem ipsum dolor sit amet'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings, color: Colors.orange),
-              title: const Text('Settings'),
-              subtitle: const Text('Lorem ipsum dolor sit amet'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.favorite, color: Colors.red),
-              title: const Text('Red Heart'),
-              subtitle: const Text('Lorem ipsum dolor sit amet'),
-              onTap: () => Navigator.of(context).pushNamed('red'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.favorite, color: Colors.green),
-              title: const Text('Green Heart'),
-              subtitle: const Text('Lorem ipsum dolor sit amet'),
-              onTap: () => Navigator.of(context).pushNamed('green'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.favorite, color: Colors.amber),
-              title: const Text('Yellow Heart'),
-              subtitle: const Text('Lorem ipsum dolor sit amet'),
-              onTap: () => Navigator.of(context).pushNamed('yellow'),
-            ),
-            ListTile(
-              leading: const Icon(Icons.exit_to_app, color: Colors.orange),
-              title: const Text('Logout'),
-              subtitle: const Text('Lorem ipsum dolor sit amet'),
-              onTap: () => Navigator.of(context).pushReplacementNamed('/'),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.home, color: Colors.orange),
+                    title: const Text('Home'),
+                    subtitle: const Text('Lorem ipsum dolor sit amet'),
+                    onTap: () => Navigator.of(context).pushNamed('home'),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.settings, color: Colors.orange),
+                    title: const Text('Settings'),
+                    subtitle: const Text('Lorem ipsum dolor sit amet'),
+                    onTap: () {},
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.favorite, color: Colors.red),
+                    title: const Text('Red Heart'),
+                    subtitle: const Text('Lorem ipsum dolor sit amet'),
+                    onTap: () => Navigator.of(context).pushNamed('red'),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.favorite, color: Colors.green),
+                    title: const Text('Green Heart'),
+                    subtitle: const Text('Lorem ipsum dolor sit amet'),
+                    onTap: () => Navigator.of(context).pushNamed('green'),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.favorite, color: Colors.amber),
+                    title: const Text('Yellow Heart'),
+                    subtitle: const Text('Lorem ipsum dolor sit amet'),
+                    onTap: () => Navigator.of(context).pushNamed('yellow'),
+                  ),
+                  ListTile(
+                    leading:
+                        const Icon(Icons.exit_to_app, color: Colors.orange),
+                    title: const Text('Logout'),
+                    subtitle: const Text('Lorem ipsum dolor sit amet'),
+                    onTap: () =>
+                        Navigator.of(context).pushReplacementNamed('/'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
